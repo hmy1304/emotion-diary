@@ -10,6 +10,7 @@
 
 .Button.POSITIVE {
     background: rgb(100, 201, 100);
+    color: #fff;
 }
 .Button.NEGATIVE {
     background: rgb(253, 86, 95);

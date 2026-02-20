@@ -3,7 +3,7 @@
     src: url("./assets/NanumPenScript-Regular.ttf");
 }
 
-body {
+body, * {
     font-family: 'NanumPenScript';
 }
 
