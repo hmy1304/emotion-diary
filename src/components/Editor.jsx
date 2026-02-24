@@ -1,4 +1,4 @@
-import Reac, {useState} from 'react'
+import Reac, {useState, useEffect} from 'react'
 import "./Editor.css"
 import Button from './Button'
 import EmotionItem from './EmotionItem'
@@ -8,7 +8,7 @@ import { emotionList } from '../util/constants'
 
 
 
-const Editor = ({onSumit}) => {  
+const Editor = ({onSumit, initData}) => {  
   const nav = useNavigate()
 
   const [input, setInput] = useState({
@@ -16,6 +16,15 @@ const Editor = ({onSumit}) => {
     emotionId:3,
     content:''
   })
+
+  useEffect(()=> {
+    if(initData) {
+        setInput({
+            ...initData,
+            createdDate:new Date(Number(initData.createdDate))
+        })
+    }
+  },[initData])
 
   const onChangeInput = (e) => {
     let name = e.target.name
