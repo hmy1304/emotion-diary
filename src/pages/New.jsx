@@ -4,8 +4,10 @@ import Header from '../components/Header'
 import Editor from '../components/Editor'
 import Button from '../components/Button'
 import { DiaryDispatchContext } from '../App'
+import useTitle from '../hooks/useTitle'
 
 const New = () => {
+  useTitle("감정일기 쓰기")
   const nav = useNavigate()
   const {onCreate} = useContext(DiaryDispatchContext)
 
